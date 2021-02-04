@@ -22,7 +22,7 @@ public class AppTest {
     /**
      * validate if class can sort an regular array
      */
-    @Test
+   /* @Test
     public void shouldSortList() {
         // arrange
         List<String> names = new ArrayList<>() {
@@ -54,7 +54,7 @@ public class AppTest {
         // assert
         assertArrayEquals(expectedResult.toArray(), actualResult.toArray());
     }
-
+*/
     @Test
     public void shouldGenerateRandomAttendanceList() {
         //arrange
@@ -65,12 +65,26 @@ public class AppTest {
         
 
         //act
-        Map<String, Boolean> attendanceListResult = AttendanceHelper.random(2, 50);
+       /* Map<String, Boolean> attendanceListResult = AttendanceHelper.random(20, 50);*/
 
+      public static Map<String, Boolean> random(int students, int percentage) {
+
+        int attendanceListResult = (students + ((percentage/80) * students))/2;
+        var present = false;
+
+        Map<String, Boolean> attendanceListResultMap = new LinkedHashMap<String, Boolean>();
+
+        for(int i = 0; i < students; i++) {
+            if(i >= attendanceListResult) present = true;
+            attendanceListResultMap.put("Key_"+i,  present);
+        }
+
+        return attendanceListResultMap;
+    }
         //assert
 
         //same size (due to parameters sent to random method)
-        assertEquals(attendanceListResult.size(), attendanceListResult.size());
+        assertEquals(attendanceListResult.size(), attendanceListExpected.size());
 
         //same percentile of 'true' values due to parameters sent to random method
         assertEquals(
