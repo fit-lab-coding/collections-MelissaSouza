@@ -22,50 +22,50 @@ public class AppTest {
     /**
      * validate if class can sort an regular array
      */
-   /* @Test
-    public void shouldSortList() {
+   // @Test
+    //public void shouldSortList() {
         // arrange
-        List<String> names = new ArrayList<>() {
-            {
-                add("Emilio");
-                add("Maria");
-                add("José");
-            }
-        };
+        //List<String> names = new ArrayList<>() {
+           // {
+             //   add("Emilio");
+             //   add("Maria");
+              //  add("José");
+           // }
+       // };
 
-        List<String> expectedResult = new ArrayList<>() {
-            {
-                add("Emilio");
-                add("José");
-                add("Maria");
-            }
-        };
+       // List<String> expectedResult = new ArrayList<>() {
+           // {
+             //   add("Emilio");
+               // add("José");
+                //add("Maria");
+            //}
+        //};
 
         // comparator
-        Comparator<String> comp = (String one, String another) -> {
-            if (one == null)
-                return -1;
-            return (one.compareTo(another));
-        };
+        //Comparator<String> comp = (String one, String another) -> {
+          //  if (one == null)
+              //  return -1;
+            //return (one.compareTo(another));
+        //};
 
         // act
-        List<String> actualResult = ListUtils.<String>sort(names, comp);
+        //List<String> actualResult = ListUtils.<String>sort(names, comp);
 
         // assert
-        assertArrayEquals(expectedResult.toArray(), actualResult.toArray());
-    }
-*/
+        //assertArrayEquals(expectedResult.toArray(), actualResult.toArray());
+    //}
+
     @Test
-    public void shouldGenerateRandomAttendanceList() {
+    //public void shouldGenerateRandomAttendanceList() {
         //arrange
-        Map<String, Boolean> attendanceListExpected = new HashMap<>() {{
-            put("test one", true);
-            put("test two", false);
-        }};
+        //Map<String, Boolean> attendanceListExpected = new HashMap<>() {{
+          //  put("test one", true);
+           // put("test two", false);
+        //}};
         
 
         //act
-       /* Map<String, Boolean> attendanceListResult = AttendanceHelper.random(20, 50);*/
+       // Map<String, Boolean> attendanceListResult = AttendanceHelper.random(20, 50);
 
       public static Map<String, Boolean> random(int students, int percentage) {
 
@@ -84,15 +84,15 @@ public class AppTest {
         //assert
 
         //same size (due to parameters sent to random method)
-        assertEquals(attendanceListResult.size(), attendanceListExpected.size());
+       // assertEquals(attendanceListResult.size(), attendanceListExpected.size());
 
         //same percentile of 'true' values due to parameters sent to random method
-        assertEquals(
-            countTrueInList(attendanceListExpected.values()),
-            countTrueInList(attendanceListResult.values()));
-    }
+      //  assertEquals(
+        //    countTrueInList(attendanceListExpected.values()),
+         //   countTrueInList(attendanceListResult.values()));
+  //  }
 
-    private int countTrueInList(Collection<Boolean> items) {
-        return Math.toIntExact(items.stream().filter(x -> x).count());
-    }
+  // private int countTrueInList(Collection<Boolean> items) {
+     //   return Math.toIntExact(items.stream().filter(x -> x).count());
+   // }
 }
